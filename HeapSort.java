@@ -1,18 +1,22 @@
+import java.util.Random;
+
 public class HeapSort{
     public static void main(String[] args) {
-        int[] array = new int[] {2, 8,10, 9, 3, 14,  5, 7, 13, 6, 1, 11, 15, 26, 12,31, 4 };
+        Random rnd = new Random();
 
+        int[] array = new int[15];
             for (int i = 0; i < array.length; i++ ){
+                array[i] =  rnd.nextInt(1, 15);
                 System.out.print(array[i]+ " ");
             }
         System.out.println();
-        sort(array);
+        sortH(array);
         for (int i = 0; i < array.length; i++ ){
             System.out.print(array[i]+ " ");
         }
     }
 
-    public static void sort(int[] array){
+    public static void sortH(int[] array){
         for (int i = array.length/2 -1; i >= 0; i--){
             heapify(array, array.length,i);
         }
